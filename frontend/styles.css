@@ -1,15 +1,25 @@
+/*Configuraçoes Gerais*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
-    background-color: #f1f1f1;
+    font-family: Arial, sans-serif;
+    background-color: #f1f3f5;
 }
-header {
-    background-color: #222;
+/*Estrutura Principal*/
+.app-container{
+    display: flex;
+    min-height: 100vh;
+}
+.sidebar{
+    width: 250px;
+    background-color: #212529;
     color: white;
-    text-align: center;
-    padding: 10px;
 }
-aside {
-    background-color: #f1f1f1;
-}
-.searchbar {
-    width: 300px;
+/*Area Principal*/
+main{
+    flex: 1;
+    min-width: 0;
 }
