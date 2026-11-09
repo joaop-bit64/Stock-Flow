@@ -85,3 +85,50 @@ main{
     color: #495057;
     font-weight: 600;
 }
+
+/*Conteúdo do Dashboard*/
+.dashboard-content {
+    padding: 30px;
+}
+
+.dashboard-content > div:first-child {
+    margin-bottom: 25px;
+}
+
+.dashboard-content h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #212529;
+}
+
+.dashboard-content p {
+    color: #6c757d;
+}
+
+/*Card dos Indicadores*/
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.stat-card h3 {
+    font-size: 15px;
+    color: #6c757d;
+    margin-bottom: 12px;
+}
+
+.stat-card p {
+    font-size: 28px;
+    font-weight: bold;
+    color: #212529;
+    margin: 0;
+}
