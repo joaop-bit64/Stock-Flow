@@ -65,3 +65,23 @@ main{
     background-color: #0d6efd;
     color: white;
 }
+
+/*Cabeçalho*/
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 20px 30px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.topbar h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.user-info {
+    color: #495057;
+    font-weight: 600;
+}
