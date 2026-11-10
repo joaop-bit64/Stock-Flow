@@ -72,15 +72,18 @@
 
                     <div class="section-header">
                         <h2>Produtos</h2>
-                        <button type="button">+ Novo Produto</button>
+                        <button type="button" id="add-product-button">
+                            + Novo Produto
+                        </button>
                     </div>
 
                     <!--Barra De Pesquisa-->
-                    <form class="search-form">
+                    <form class="search-form" id="search-form">
 
                         <input
                             type="search"
                             class="searchbar"
+                            id="search-input"
                             placeholder="Pesquisar produto..."    
                         >
 
@@ -101,34 +104,7 @@
                                 </tr>
                             </thead>
 
-                            <tbody>
-
-                                <tr>
-                                    <td>Mouse Logitech G203</td>
-                                    <td>PRD001</td>
-                                    <td>Periféricos</td>
-                                    <td>25</td>
-                                    <td>Disponível</td>
-                                    <td>Editar | Excluir</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Teclado Mecânico</td>
-                                    <td>PRD002</td>
-                                    <td>Periféricos</td>
-                                    <td>3</td>
-                                    <td>Estoque Baixo</td>
-                                    <td>Editar | Excluir</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Monitor 24 Polegadas</td>
-                                    <td>PRD003</td>
-                                    <td>Monitores</td>
-                                    <td>12</td>
-                                    <td>Disponível</td>
-                                    <td>Editar | Excluir</td>
-                                </tr>
+                            <tbody id="products-table-body">
                             </tbody>
                         </table>
                     </div>
