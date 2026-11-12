@@ -3,24 +3,38 @@ const products = [
     { name: 'Teclado Mecânico' , code: 'PRD002' , category: 'Perifericos' , quantity: 3 },
     { name: 'Monitor 24 Polegadas' , code: 'PRD003' , category: 'Monitores' , quantity: 12 }
 ];
-const productsTableBody = document.getElementById('products-table-body')
 
-productsTableBody.innerHTML = "";
-products.forEach(function(product){
+const productsTableBody = document.getElementById('products-table-body');
 
-    const row = document.createElement("tr");
+function renderProducts() {
+    productsTableBody.innerHTML = "";
 
-    row.innerHTML = `
-        <td>${product.name}</td>
-        <td>${product.code}</td>
-        <td>${product.category}</td>
-        <td>${product.quantity}</td>
-        <td>Disponível</td>
-        <td>Excluir | Editar</td>
+    products.forEach(function(product) {
 
+        let status = '';
+
+        if (product.quantity < 5) {
+            status = 'Estoque Baixo';
+        } else {
+             status = 'Disponível';
+        }
+
+
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+         <td>${product.name}</td>
+         <td>${product.code}</td>
+         <td>${product.category}</td>
+         <td>${product.quantity}</td>
+         <td>${status}</td>
+         <td>Excluir | Editar</td>
+        `;
         
-    `;
+        productsTableBody.appendChild(row)
 
-    productsTableBody.appendChild(row);
+    });
+    
+}
 
-});
+renderProducts();
