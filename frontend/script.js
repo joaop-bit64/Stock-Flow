@@ -1,8 +1,12 @@
-const products = [
+let products = JSON.parse(localStorage.getItem("products")) || [
     { name: 'Mouse logitech G203' , code: 'PRD001', category: 'Perifericos', quantity: 25 },
     { name: 'Teclado Mecânico' , code: 'PRD002' , category: 'Perifericos' , quantity: 3 },
     { name: 'Monitor 24 Polegadas' , code: 'PRD003' , category: 'Monitores' , quantity: 12 }
 ];
+
+function saveProducts() {
+    localStorage.setItem("products", JSON.stringify(products));
+}
 
 const productsTableBody = document.getElementById('products-table-body');
 
@@ -58,6 +62,7 @@ function renderProducts() {
 
             if (productIndex !== -1) {
                 products.splice(productIndex, 1);
+                saveProducts();
             }
 
             renderProducts();
@@ -79,6 +84,8 @@ productForm.addEventListener("submit", function(event) {
     };
 
     products.push(newProduct);
+
+    saveProducts();
 
     renderProducts();
 
