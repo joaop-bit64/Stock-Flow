@@ -6,6 +6,13 @@ const products = [
 
 const productsTableBody = document.getElementById('products-table-body');
 
+const productForm = document.getElementById('product-form');
+
+const productName = document.getElementById('product-name');
+const productCode = document.getElementById('product-code');
+const productCategory = document.getElementById('product-category');
+const productQuantity = document.getElementById('product-quantity');
+
 function renderProducts() {
     productsTableBody.innerHTML = "";
 
@@ -36,5 +43,22 @@ function renderProducts() {
     });
     
 }
+productForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const newProduct = {
+        name: productName.value,
+        code: productCode.value,
+        category: productCategory.value,
+        quantity: Number(productQuantity.value)
+    };
+
+    products.push(newProduct);
+
+    renderProducts();
+
+    productForm.reset();
+
+});
 
 renderProducts();
