@@ -35,8 +35,33 @@ function renderProducts() {
          <td>${product.category}</td>
          <td>${product.quantity}</td>
          <td>${status}</td>
-         <td>Excluir | Editar</td>
+         <td>
+
+          <button class="delete-button" data-code="${product.code}">
+            Excluir
+          </button>
+
+          <button class="edit-button" data-code="${product.code}">
+            Editar
+          </button>
+
+         </td>
         `;
+
+        const deleteButton = row.querySelector(".delete-button");
+
+        deleteButton.addEventListener("click", function() {
+
+            const productIndex = products.findIndex(function(item){
+                return item.code ===product.code;
+            });
+
+            if (productIndex !== -1) {
+                products.splice(productIndex, 1);
+            }
+
+            renderProducts();
+        });
         
         productsTableBody.appendChild(row)
 
